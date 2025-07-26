@@ -12,7 +12,7 @@ class MascotaController extends Controller
     //Lista de pacientes
     public function index()
     {
-        return MascotaResource::collection(Mascota::all());
+        return MascotaResource::collection(Mascota::with('clientes','especie')->get());
     }
 
     //Crear Paciente

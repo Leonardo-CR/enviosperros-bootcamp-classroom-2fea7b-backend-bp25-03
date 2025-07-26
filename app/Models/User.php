@@ -64,7 +64,7 @@ class User extends Authenticatable implements JWTSubject
     //Relacion para saber las mascotas de un cliente
     public function mascotas()
     {
-        return $this->belongsToMany(Mascota::class,'clientes_mascotas','cliente_id','mascota_id');
+        return $this->hasMany(Mascota::class,'cliente_id');
     }
 
     // Relacion 

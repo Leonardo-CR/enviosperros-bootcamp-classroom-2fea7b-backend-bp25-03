@@ -19,8 +19,8 @@ class MascotaResource extends JsonResource
             'fecha_nacimiento' => $this->fecha_nacimiento,
             'peso' => $this->peso,
             'raza' => $this->raza,
-            'especie_id' => $this->especie_id,
-            'cliente_id' => $this->cliente_id,
+            'especie_id' => $this->especie->nombre ?? null,
+            'cliente_nombre' => $this->clientes->name ?? null,
         ];
     }
 }

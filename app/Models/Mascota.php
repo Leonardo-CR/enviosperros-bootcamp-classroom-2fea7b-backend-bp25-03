@@ -26,7 +26,7 @@ class Mascota extends Model
     //Relacion para saber que mascota pertenece a que cliente
     public function clientes()
     {
-        return $this->belongsToMany(User::class,'clientes_mascotas','mascota_id','cliente_id');
+        return $this->belongsTo(User::class,'id');
     }
     //Relacion para saber las vacunas de un cliente
     public function vacunas()
@@ -47,6 +47,6 @@ class Mascota extends Model
     //Relacion con especie
     public function especie()
     {
-        return $this->hasOne(Especie::class,'mascota_id');
+        return $this->hasOne(Especie::class,'id');
     }
 }
