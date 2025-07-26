@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'auth/api/*','client/*, pacient/*'], // Sólo rutas API
+    'paths' => ['api/*', 'auth/api/*','client/*, pacient/*', 'prescriptions/*'], // Sólo rutas API
     'allowed_methods' => ['*'], // GET, POST, PUT, DELETE, etc.
     'allowed_origins' => [
         'http://localhost:5173',    // Vue en desarrollo

@@ -23,7 +23,9 @@ class RecetaResource extends JsonResource
             'temperatura' => $this->temperatura,
             'peso' => $this->peso,
             'mascota_id' => $this->mascota_id,
+            'mascota_nombre' => $this->mascota->nombre ?? null,
             'veterinario_id' => $this->veterinario_id,
+            'veterinario_nombre' => $this->veterinario->nombre,
         ];
     }
 }

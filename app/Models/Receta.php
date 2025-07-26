@@ -29,15 +29,15 @@ class Receta extends Model
 
 
     //Relacion mascotas
-    public function mascotas()
+    public function mascota()
     {
-      return $this->belongsToMany(Mascota::class,'mascotas_recetas','receta_id','mascota_id');
+        return $this->belongsTo(Mascota::class);
     }
 
     //Relacion recetas
-    public function veterinarios()
+    public function veterinario()
     {
-      return $this->hasMany(Veterinario::class,'receta_id');
+      return $this->belongsTo(Veterinario::class);
     }
 
     

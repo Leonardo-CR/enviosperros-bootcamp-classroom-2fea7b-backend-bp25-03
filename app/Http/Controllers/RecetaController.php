@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMascotaRequest;
+use App\Http\Requests\StoreRecetaRequest;
+use App\Http\Resources\MascotaResource;
+use App\Http\Resources\RecetaResource;
+use App\Models\Mascota;
 use App\Models\Receta;
 use Illuminate\Http\Request;
 
@@ -12,47 +17,41 @@ class RecetaController extends Controller
      */
     public function index()
     {
-        Receta::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return RecetaResource::collection(Receta::all());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRecetaRequest $request)
     {
-        //
+        //Validacion
+        $data = $request->validated();
+        //Crear Registro
+        $mascota = Receta::create($data);
+        //Retornar
+        return new RecetaResource($mascota);
     }
-
     /**
      * Display the specified resource.
      */
     public function show(Receta $receta)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Receta $receta)
-    {
-        //
+        return new RecetaResource($receta);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Receta $receta)
+    public function update(StoreMascotaRequest $request, Receta $receta)
     {
-        //
+        //validar
+        $data = $request->validated();
+        //actualizar
+        $receta->update($data);
+        //retornamos el recurso con 200 ok
+        return $receta;
+
     }
 
     /**
@@ -60,6 +59,7 @@ class RecetaController extends Controller
      */
     public function destroy(Receta $receta)
     {
-        //
+        $receta->delete();
+        return response('Se elimino la receta',200);
     }
 }

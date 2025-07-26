@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\MascotaController;
+use App\Http\Controllers\RecetaController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,11 @@ Route::prefix('pacient')->group(function(){
     Route::delete('destroy/{mascota}',[MascotaController::class,'destroy'])->name('mascotas.destroy');
 });
 
-
+// Rutas para Recetas 
+Route::prefix('prescriptions')->group(function(){
+    Route::get('index',[RecetaController::class,'index'])->name('recetas.index');
+    Route::get('show/{receta}',[RecetaController::class,'show'])->name('recetas.show');
+    Route::post('store',[RecetaController::class,'store'])->name('recetas.store');
+    Route::put('update/{receta}',[RecetaController::class,'update'])->name('recetas.update');
+    
+});

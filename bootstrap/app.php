@@ -18,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'client/*',
             'auth/api/*',
             'pacient/*',
+            'prescriptions/*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
