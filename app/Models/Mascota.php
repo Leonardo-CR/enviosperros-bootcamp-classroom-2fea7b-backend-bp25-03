@@ -35,9 +35,9 @@ class Mascota extends Model
     }
 
     //Relacion con recetas
-    public function recetas()
+    public function mascota()
     {
-        return $this->belongsToMany(Receta::class,'mascotas_recetas','mascota_id','receta_id');
+    return $this->belongsTo(Mascota::class, 'mascota_id');
     }
     //Relacion con citas 
     public function citas()
