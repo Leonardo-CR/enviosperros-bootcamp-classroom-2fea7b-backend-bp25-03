@@ -102,8 +102,87 @@ class DataSeeder extends Seeder
             ], 
         ]);
         // Data para recetas medicas para mascotas
-        
+        DB::table('recetas')->insert([
+            [
+                'fecha' => '2025-07-25',
+                'hora' => '10:30:00',
+                'duracion' => '30 minutos',
+                'diagnostico' => 'Infección leve',
+                'tratamiento' => 'Antibiótico durante 5 días',
+                'temperatura' => 38.5,
+                'peso' => 4.2,
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'fecha' => '2025-07-20',
+                'hora' => '12:00:00',
+                'duracion' => '45 minutos',
+                'diagnostico' => 'Dolor estomacal',
+                'tratamiento' => 'Dieta blanda por 3 días',
+                'temperatura' => 39.0,
+                'peso' => 4.0,
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'fecha' => '2025-07-15',
+                'hora' => '09:15:00',
+                'duracion' => '20 minutos',
+                'diagnostico' => 'Vacunación general',
+                'tratamiento' => 'Aplicación de vacuna antirrábica',
+                'temperatura' => 37.8,
+                'peso' => 3.9,
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
         // Data para citas
-
+        DB::table('citas')->insert([
+            [
+                'fecha' => '2025-07-25',
+                'hora' => '10:00:00',
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+            ],
+            [
+                'fecha' => '2025-07-26',
+                'hora' => '12:30:00',
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+            ],
+            [
+                'fecha' => '2025-07-27',
+                'hora' => '15:00:00',
+                'mascota_id' => 1,
+                'veterinario_id' => 1,
+            ],
+        ]);
+        DB::table('mascotas_vacunas')->insert([
+            [
+                'mascota_id' => 1,
+                'vacuna_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'mascota_id' => 1,
+                'vacuna_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'mascota_id' => 1,
+                'vacuna_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
     }
 }

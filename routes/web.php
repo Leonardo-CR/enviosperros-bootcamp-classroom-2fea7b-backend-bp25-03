@@ -16,9 +16,9 @@ Route::prefix('client')->group(function () {
         ->name('clients.destroy');
 });
 
-Route::prefix('pacient')->group(function(){
-    Route::get();
-    Route::delete();
-    Route::post();
-});
+// Route::prefix('pacient')->group(function(){
+//     Route::get();
+//     Route::delete();
+//     Route::post();
+// });
 

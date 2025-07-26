@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('veterinario_id');
             
             $table->foreign('mascota_id')->references('id')->on('mascotas');
-            $table->foreign('veterinario_id')->references('id')->on('veterinario');
+            $table->foreign('veterinario_id')->references('id')->on('veterinarios');
 
 
             $table->timestamps();

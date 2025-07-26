@@ -22,7 +22,6 @@ class Receta extends Model
 
     protected $casts = [
     'fecha' => 'date',
-    'hora' => 'datetime:H:i',
     'temperatura' => 'float',
     'peso' => 'float',
   ];
