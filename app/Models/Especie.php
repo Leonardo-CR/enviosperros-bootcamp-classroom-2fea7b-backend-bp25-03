@@ -15,6 +15,6 @@ class Especie extends Model
     //Relacion con Mascota
     public function mascota()
     {
-        return $this->belongsTo(Mascota::class,'id');
+        return $this->hasMany(Mascota::class, 'especie_id');
     }
 }

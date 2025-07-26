@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Route;
 // Rutas de clientes
 Route::prefix('client')->group(function () {
     Route::get('index', [ClientsController::class, 'index'])->name('clients.index');
-    Route::delete('{user}/destroy', [ClientsController::class, 'delete'])->name('clients.destroy');
+    //Obtener las mascotas de un usuario 
+    Route::get('{user}/pets',[ClientsController::class, 'myPets'])->name('clients.pets');
+    Route::post('update/{user}',[ClientsController::class, 'update']);
+    Route::delete('destroy/{user}', [ClientsController::class, 'delete'])->name('clients.destroy');
+    Route::get('show/{user}',[ClientsController::class,'show'])->name('clients.show');
 });
 
 // Rutas para pacientes/mascotas

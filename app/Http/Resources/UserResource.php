@@ -13,7 +13,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'name' => $this->name,
             'avatar' => $this->avatar,
-            'created_at' => $this->created_at,
+            'mascotas' => MascotaResource::collection($this->whenLoaded('mascotas')),//Solo si se manda con la relacion antes
         ];
     }
 }
